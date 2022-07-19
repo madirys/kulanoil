@@ -1,3 +1,6 @@
+<script setup>
+import ChevronIcon from "./icons/ChevronIcon.vue";
+</script>
 <template>
   <div class="container">
     <div class="hero-container">
@@ -6,43 +9,15 @@
           Открытие 40-го Mobil 1 Center в г. Алматы
         </div>
         <img src="../assets/images/banner.jpg" alt="Banner Image" />
-        <button class="button hero-main--button hero-main--button__left">
-          <i
-            ><svg
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.5 18L9.5 12L15.5 6"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </i>
+        <button
+          class="button button-arrow hero-main--button hero-main--button__left"
+        >
+          <i><ChevronIcon /> </i>
         </button>
-        <button class="button hero-main--button hero-main--button__right">
-          <i
-            ><svg
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.5 18L15.5 12L9.5 6"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </i>
+        <button
+          class="button button-arrow hero-main--button hero-main--button__right"
+        >
+          <i><ChevronIcon /> </i>
         </button>
       </div>
       <div class="hero-second--top hero-second">
@@ -101,17 +76,25 @@
 
 .hero-main--button {
   position: absolute;
-  width: 36px;
-  height: 36px;
   top: 192px;
-  padding: 3px 2px 2px 2px;
+}
+
+.hero-main--button svg {
+  fill: #ffffff;
 }
 .hero-main--button__left {
   left: 20px;
 }
+.hero-main--button__left svg {
+  transform: rotate(90deg);
+}
 
 .hero-main--button__right {
   right: 20px;
+}
+
+.hero-main--button__right svg {
+  transform: rotate(-90deg);
 }
 
 .hero-second {

@@ -89,6 +89,12 @@ button:focus-visible {
   position: relative;
 }
 
+.search-bar--inner svg {
+  fill: #252525;
+  margin-right: 18px;
+  margin-left: 18px;
+}
+
 .border-short {
   border-right: #ececec 1px solid;
   position: absolute;

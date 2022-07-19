@@ -1,47 +1,21 @@
+<script setup>
+import ChevronIcon from "./icons/ChevronIcon.vue";
+</script>
+
 <template>
   <div class="carousel">
     <div class="container">
       <div class="carousel-top">
         <div class="carousel-top--title">Бренды</div>
         <a class="carousel-top--link"
-          ><span>Посмотреть все</span>
-          <i
-            ><svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 18L15 12L9 6"
-                stroke="#E41D2C"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg> </i
+          ><span>Посмотреть все</span> <i> <ChevronIcon /> </i
         ></a>
       </div>
     </div>
     <div class="carousel-brands">
       <button class="button-arrow">
-        <i
-          ><svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15.5 18L9.5 12L15.5 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <i class="button-arrow__left">
+          <ChevronIcon />
         </i>
       </button>
       <div class="container carousel-brands--container">
@@ -71,23 +45,7 @@
         </a>
       </div>
       <button class="button-arrow">
-        <i
-          ><svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.5 18L15.5 12L9.5 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </i>
+        <i class="button-arrow__right"><ChevronIcon /> </i>
       </button>
     </div>
   </div>
@@ -124,8 +82,10 @@
 .carousel-top--link span {
   margin-right: 20px;
 }
-.carousel-top--link i {
-  margin-top: 5px;
+
+.carousel-top--link svg {
+  fill: #e41d2c;
+  transform: rotate(-90deg);
 }
 
 .carousel-brands {
@@ -155,5 +115,16 @@
   background: #ffffff;
   box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.08);
   border-radius: 5px;
+}
+
+.button-arrow svg {
+  fill: #ffffff;
+}
+
+.button-arrow__left svg {
+  transform: rotate(90deg);
+}
+.button-arrow__right svg {
+  transform: rotate(-90deg);
 }
 </style>

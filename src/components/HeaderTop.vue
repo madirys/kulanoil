@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
-import ChevronDown from "./icons/ChevronDown.vue";
+import ChevronIcon from "./icons/ChevronIcon.vue";
+import MarkerIcon from "./icons/MarkerIcon.vue";
+import WalletIcon from "./icons/WalletIcon.vue";
 
 const cities = ["Алматы", "Астана", "Шымкент", "Караганда", "Тараз"];
 const navs = [
@@ -27,34 +29,13 @@ const city = ref(cities[0]);
       <div class="header-top-row">
         <div class="header-top--city">
           <div class="header-top--city__marker">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 10.1818C20 16.5455 12 22 12 22C12 22 4 16.5455 4 10.1818C4 8.01187 4.84285 5.93079 6.34315 4.3964C7.84344 2.86201 9.87827 2 12 2C14.1217 2 16.1566 2.86201 17.6569 4.3964C19.1571 5.93079 20 8.01187 20 10.1818Z"
-                stroke="#252525"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                stroke="#252525"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            <MarkerIcon />
           </div>
           <div class="header-top--city__label">
             {{ city }}
           </div>
           <div class="header-top--city__arrow">
-            <ChevronDown />
+            <ChevronIcon />
           </div>
         </div>
         <nav class="header-top-nav">
@@ -101,36 +82,11 @@ const city = ref(cities[0]);
           </a>
           <a href="#" class="header-top-user--wallet">
             <div class="header-top-user--wallet__icon">
-              <svg
-                width="20"
-                height="18"
-                viewBox="0 0 20 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17 4H16V3C16 2.20435 15.6839 1.44129 15.1213 0.87868C14.5587 0.316071 13.7956 0 13 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V15C0 15.7956 0.316071 16.5587 0.87868 17.1213C1.44129 17.6839 2.20435 18 3 18H17C17.7956 18 18.5587 17.6839 19.1213 17.1213C19.6839 16.5587 20 15.7956 20 15V7C20 6.20435 19.6839 5.44129 19.1213 4.87868C18.5587 4.31607 17.7956 4 17 4ZM3 2H13C13.2652 2 13.5196 2.10536 13.7071 2.29289C13.8946 2.48043 14 2.73478 14 3V4H3C2.73478 4 2.48043 3.89464 2.29289 3.70711C2.10536 3.51957 2 3.26522 2 3C2 2.73478 2.10536 2.48043 2.29289 2.29289C2.48043 2.10536 2.73478 2 3 2ZM18 12H17C16.7348 12 16.4804 11.8946 16.2929 11.7071C16.1054 11.5196 16 11.2652 16 11C16 10.7348 16.1054 10.4804 16.2929 10.2929C16.4804 10.1054 16.7348 10 17 10H18V12ZM18 8H17C16.2044 8 15.4413 8.31607 14.8787 8.87868C14.3161 9.44129 14 10.2044 14 11C14 11.7956 14.3161 12.5587 14.8787 13.1213C15.4413 13.6839 16.2044 14 17 14H18V15C18 15.2652 17.8946 15.5196 17.7071 15.7071C17.5196 15.8946 17.2652 16 17 16H3C2.73478 16 2.48043 15.8946 2.29289 15.7071C2.10536 15.5196 2 15.2652 2 15V5.83C2.32127 5.94302 2.65943 6.00051 3 6H17C17.2652 6 17.5196 6.10536 17.7071 6.29289C17.8946 6.48043 18 6.73478 18 7V8Z"
-                  fill="#17488B"
-                />
-              </svg>
+              <WalletIcon />
             </div>
             <div class="header-top-user--wallet__label">Кошелек</div>
             <div class="header-top-user--wallet__arrow">
-              <svg
-                width="10"
-                height="6"
-                viewBox="0 0 10 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L5 5L9 1"
-                  stroke="#17488B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <ChevronIcon />
             </div>
           </a>
         </div>
@@ -155,11 +111,17 @@ const city = ref(cities[0]);
   display: flex;
   align-items: center;
 }
-.header-top--city__marker {
+.header-top--city__marker svg {
   margin-right: 12px;
+  fill: none;
+  stroke: #252525;
 }
 .header-top--city__label {
   margin-right: 9.75px;
+}
+
+.header-top--city__arrow svg {
+  fill: #252525;
 }
 
 .header-top-nav ul {
@@ -211,14 +173,16 @@ const city = ref(cities[0]);
   align-items: center;
   color: #17488b;
 }
-.header-top-user--wallet__icon {
+.header-top-user--wallet__icon svg {
   margin-right: 12px;
+  fill: #17488b;
 }
 .header-top-user--wallet__label {
   margin-right: 7px;
 }
 
-.header-top-user--wallet__arrow {
-  padding-bottom: 5px;
+.header-top-user--wallet__arrow svg {
+  padding-top: 3px;
+  fill: #17488b;
 }
 </style>

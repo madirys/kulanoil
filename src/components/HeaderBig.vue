@@ -1,14 +1,15 @@
 <script setup>
-import ChevronDown from "./icons/ChevronDown.vue";
+import ChevronIcon from "./icons/ChevronIcon.vue";
 import SearchIcon from "./icons/SearchIcon.vue";
 import BoxIcon from "./icons/BoxIcon.vue";
 import HeartIcon from "./icons/HeartIcon.vue";
 import CartIcon from "./icons/CartIcon.vue";
 import PersonIcon from "./icons/PersonIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
+import HamburgerIcon from "./icons/HamburgerIcon.vue";
 import { ref } from "vue";
 
-const orders = ref(2)
+const orders = ref(2);
 
 defineProps({
   toggleCatalog: Function,
@@ -96,37 +97,7 @@ defineProps({
         </a>
         <div class="heder-big--categories-btn">
           <button class="button button-category" @click="toggleCatalog">
-            <i class="button-icon" v-if="!isCatalogOpen"
-              ><svg
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.5 18.5H21.5"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3.5 12.5H21.5"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3.5 6.5H21.5"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </i>
+            <i class="button-icon" v-if="!isCatalogOpen"><HamburgerIcon /> </i>
             <i class="button-icon" v-if="isCatalogOpen"><CloseIcon /></i>
             <span>Категории</span>
           </button>
@@ -135,7 +106,7 @@ defineProps({
           <div class="search-bar">
             <div class="search-bar--inner">
               <p>Название</p>
-              <ChevronDown />
+              <ChevronIcon />
               <div class="border-short"></div>
               <!-- Feature todo -->
               <!-- <ul>
@@ -171,7 +142,9 @@ defineProps({
           </div>
           <div class="header-big--user-btns__elem">
             <i><PersonIcon /></i>
-            <span>ИП Де...</span>
+            <div class="user-btns__elem">
+              <span>ИП Де...<ChevronIcon /></span>
+            </div>
           </div>
         </div>
       </div>
@@ -197,6 +170,10 @@ defineProps({
   position: relative;
 }
 
+.user-btns__elem svg {
+  fill: #252525;
+}
+
 .header-big {
   background-color: #ffffff;
   box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.05);
@@ -220,17 +197,18 @@ defineProps({
 
 .button-icon {
   margin-right: 15px;
+  margin-top: 5px;
 }
 
 .orders {
   position: relative;
 }
 .icon-count[data-count]::after {
-  position:absolute;
+  position: absolute;
   height: 18px;
   width: 18px;
-  right:0%;
-  top:-5px;
+  right: 0%;
+  top: -5px;
   content: attr(data-count);
   border: 1px solid #ffffff;
   border-radius: 50%;
