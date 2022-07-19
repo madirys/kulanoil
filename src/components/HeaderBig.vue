@@ -20,7 +20,7 @@ defineProps({
   <div class="header-big">
     <div class="container">
       <div class="header-big-row">
-        <div class="header-big--logo">
+        <a href="#" class="header-big--logo">
           <svg
             width="80"
             height="80"
@@ -93,7 +93,7 @@ defineProps({
               fill="#E41D2C"
             />
           </svg>
-        </div>
+        </a>
         <div class="heder-big--categories-btn">
           <button class="button button-category" @click="toggleCatalog">
             <i class="button-icon" v-if="!isCatalogOpen"
@@ -184,6 +184,7 @@ defineProps({
   display: flex;
   align-items: center;
   gap: 20px;
+  cursor: pointer;
 }
 
 .header-big--user-btns__elem {

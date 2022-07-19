@@ -59,13 +59,13 @@ const city = ref(cities[0]);
         </div>
         <nav class="header-top-nav">
           <ul>
-            <li v-for="(item, index) in navs" key="index">
+            <li v-for="(item, index) in navs" :key="index">
               <a>{{ item }}</a>
             </li>
           </ul>
         </nav>
         <div class="header-top-user">
-          <div class="header-top-user--bonus">
+          <a href="#" class="header-top-user--bonus">
             <div class="header-top-user--bonus__icon">
               <svg
                 width="24"
@@ -98,8 +98,8 @@ const city = ref(cities[0]);
               </svg>
             </div>
             <div class="header-top-user--bonus__count">38420</div>
-          </div>
-          <div class="header-top-user--wallet">
+          </a>
+          <a href="#" class="header-top-user--wallet">
             <div class="header-top-user--wallet__icon">
               <svg
                 width="20"
@@ -132,7 +132,7 @@ const city = ref(cities[0]);
                 />
               </svg>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -194,6 +194,7 @@ const city = ref(cities[0]);
   display: flex;
   align-items: center;
   margin-right: 32px;
+  color: #252525
 }
 
 .header-top-user--bonus__icon {
