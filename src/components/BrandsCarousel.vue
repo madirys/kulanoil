@@ -45,30 +45,30 @@
         </i>
       </button>
       <div class="container carousel-brands--container">
-        <div class="carousel-brands--brand">
+        <a class="carousel-brands--brand">
           <img src="../assets/images/brand-logo.png" alt="brand logo" />
           <div class="carousel-brands--brand__name">AD BATTERY</div>
-        </div>
-        <div class="carousel-brands--brand">
+        </a>
+        <a class="carousel-brands--brand">
           <img src="../assets/images/mobil-logo.png" alt="brand logo" />
           <div class="carousel-brands--brand__name">MOBIL</div>
-        </div>
-        <div class="carousel-brands--brand">
+        </a>
+        <a class="carousel-brands--brand">
           <img src="../assets/images/mann-logo.png" alt="brand logo" />
           <div class="carousel-brands--brand__name">MANN-FILTER</div>
-        </div>
-        <div class="carousel-brands--brand">
+        </a>
+        <a class="carousel-brands--brand">
           <img src="../assets/images/555-logo.png" alt="brand logo" />
           <div class="carousel-brands--brand__name">555</div>
-        </div>
-        <div class="carousel-brands--brand">
+        </a>
+        <a class="carousel-brands--brand">
           <img src="../assets/images/denso-logo.png" alt="brand logo" />
           <div class="carousel-brands--brand__name">DENSO</div>
-        </div>
-        <div class="carousel-brands--brand">
+        </a>
+        <a class="carousel-brands--brand">
           <img src="../assets/images/fram-logo.png" alt="brand logo" />
           <div class="carousel-brands--brand__name">FRAM</div>
-        </div>
+        </a>
       </div>
       <button class="button-arrow">
         <i
@@ -148,8 +148,10 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  cursor: pointer;
+  color: #252525;
 }
-.carousel-brands--brand:first-child {
+.carousel-brands--brand:hover {
   background: #ffffff;
   box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.08);
   border-radius: 5px;
